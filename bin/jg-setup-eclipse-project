@@ -1,0 +1,29 @@
+project_dir=$1
+project_name=$2
+
+#readme file
+echo "# $project_name
+
+## SETUP
+Use setup.sh to initial configuration and dependency fetch
+
+## DEPENDENCIES
+* Dependency sample
+" > $project_dir/README.md
+
+# setup file
+echo "# this file will fetch and build the the project dependencies and configure some initial values as well." > $project_dir/setup.sh
+
+# gitignore file
+echo "$project_name/.classpath
+$project_name/.project
+$project_name/.settings/*
+$project_name/bin/*
+$project_name/gen/*
+.metadata/
+*~" > $project_dir/.gitignore
+
+mkdir $project_dir/libraries
+
+echo "*
+!.gitignore" > $project_dir/libraries/.gitignore
