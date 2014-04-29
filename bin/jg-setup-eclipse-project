@@ -1,8 +1,7 @@
 project_dir=$1
-project_name=$2
 
 #readme file
-echo "# $project_name
+echo "# PROJECT NAME
 
 ## SETUP
 Use setup.sh to initial configuration and dependency fetch
@@ -15,12 +14,10 @@ Use setup.sh to initial configuration and dependency fetch
 echo "# this file will fetch and build the the project dependencies and configure some initial values as well." > $project_dir/setup.sh
 
 # gitignore file
-echo "$project_name/.classpath
-$project_name/.project
-$project_name/.settings/*
-$project_name/bin/*
-$project_name/gen/*
-.metadata/
+echo ".gradle
+local.properties
+.idea
+.DS_Store
 *~" > $project_dir/.gitignore
 
 mkdir $project_dir/libraries
